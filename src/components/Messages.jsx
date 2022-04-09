@@ -2,10 +2,9 @@ import React from "react";
 
 const Messages = () => {
   return (
-    <div class="row">
-    <div id="messages" class="col">
+    <div className="row">
+      <div id="messages" className="col"></div>
     </div>
-  </div>
   );
 };
 

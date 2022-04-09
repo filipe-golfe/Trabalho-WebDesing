@@ -1,70 +1,53 @@
 import React from "react";
 import { getContacts } from "../api/api";
 
-const requestUser = async() => {
-    const user = await getContacts()
-    return user.results[0];
-}
-
-// const getUser = async () => {
-//     const items = [];
-//     for (let i = 0; i < 1; i++) {
-//       const userrrr = await requestUser();
-//     //   console.log(userrrr);
-
-//         items.push(
-//         <div class="row">
-//           <div class="col list-group-item-action d-flex align-items-center">
-//             <img
-//               class="img-fluid"
-//               src={require("../assets/contact.png")}
-//               alt="contato2"
-//             />
-//             <div class="flex-column align-items-center flex-fill m-2">
-//               <h6>{userrrr.name.first}</h6>
-//               <small>Mensagem</small>
-//             </div>
-//             <small>Ontem</small>
-//           </div>
-//         </div>
-//       );
-//     }
-//     return items
-// }
-
-
-// const Contacts = async () => {
-//     const items = await getUser();
-//     console.log(items);
-  
-//     return (
-//     <div class="row">
-//       <div id="contatos" class="col scrul">
-//         {items}
-//       </div>
-//     </div>
-//   );
-// };
-
-const Contacts = async () => {
-    const items = [];
-    for (let i = 0; i < 2; i++) {
-        let rawUser = await requestUser();
-        let serializedUser = rawUser.name.first;
-        items.push(serializedUser);
-    }
-
-    // console.log(items);
-  
-//     return (
-//     <div class="row">
-//       <div id="contatos" class="col scrul">
-//       {items.map(function(name, index){
-//         return <li key={ index }>{name}</li>;
-//         })}
-//       </div>
-//     </div>
-//   );
+const requestUser = async () => {
+  const user = await getContacts();
+  return user.results[0];
 };
 
-export default Contacts;
+export class Contacts extends React.Component {
+  constructor() {
+    super();
+    this.state = { data: [] };
+  }
+
+  async componentDidMount() {
+    const items = [];
+    for (let i = 0; i < 20; i++) {
+      let rawUser = await requestUser();
+      let serializedUser = rawUser.name.first;
+      items.push(serializedUser);
+    }
+
+    this.setState({ data: items });
+  }
+
+  render() {
+    return (
+      <div className="row">
+        <div id="contatos" className="col scrul">
+          {this.state.data.map(function (name, index) {
+            return (
+              <div
+                className="col list-group-item-action d-flex align-items-center"
+                key={index}
+              >
+                <img
+                  className="img-fluid"
+                  src={require("../assets/contact.png")}
+                  alt="contato2"
+                />
+                <div className="flex-column align-items-center flex-fill m-2">
+                  <h6>{name}</h6>
+                  <small>Mensagem</small>
+                </div>
+                <small>Ontem</small>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
+}

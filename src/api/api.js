@@ -1,5 +1,3 @@
-// import axios from "axios";
-
 export async function getContacts() {
   const URL = 'https://randomuser.me/api/';
   const res = await fetch(URL);
@@ -10,13 +8,3 @@ export async function getContacts() {
     return null;
   }
 }
-
-// export async function getContacts(){
-//   axios.get('https://randomuser.me/api/')
-//   .then(function(response){
-//     return response;
-//   })
-//   .catch(function(error){
-//     console.log('erro na consulta:' + error)
-//   })
-// }
