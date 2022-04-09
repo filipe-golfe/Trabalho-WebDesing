@@ -1,38 +1,215 @@
-.App {
-  text-align: center;
+body {
+    overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#profile-row {
+    background-color: #eee;
+    height: 4rem;
+    border: 1px solid;
+    border-color: rgba(189, 189, 189, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#user {
+    background-color: #eee;
+    height: 4rem;
+    border: 1px solid;
+    border-color: rgba(189, 189, 189, 0.3);
+    border-left: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#busca {
+    background-color: #f8f8f8;
+    height: 3rem;
 }
 
-.App-link {
-  color: #61dafb;
+#messages {
+    background-color: #e5ddd5;
+    height: calc(100vh - 127px);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#chat {
+    background-color: #eee;
+    height: 4rem;
+}
+
+#contatos>.row>.col {
+    border-bottom: thin solid rgba(189, 189, 189, 0.3);
+}
+
+img {
+    width: 3.5rem;
+}
+
+small {
+    color: #9b9b9b;
+    font-size: 0.8rem;
+}
+
+h6 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.badge {
+    background-color: #09d261;
+    text-decoration: none;
+}
+
+@media (max-width: 300px) {
+    #user {
+        height: 8rem;
+    }
+}
+
+/* Input Message */
+.np-chat-container {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    border: 1px solid #000000;
+    padding: 12px;
+    background: #080b10;
+}
+
+.np-chat-container--holder {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.np-chat--text {
+    width: 200px;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    background: #eee;
+    word-break: keep-all;
+    margin: 15px 6px;
+    padding: 15px 10px;
+    border-radius: 6px;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.np-chat--time {
+    opacity: 0.7;
+}
+
+.np-chat--text_received {
+    background: #005d4b;
+    float: right;
+}
+
+.np-chat--text_sent {
+    background: #1f2c34;
+    float: left;
+}
+
+.np-input-text--value_holder {
+    position: absolute;
+    width: 65%;
+    height: 50px;
+    bottom: 0px;
+}
+
+.np-input-text--value {
+    padding: 6px 15px;
+    width: 100%;
+    font-size: 14px;
+    background: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 30px;
+    color: rgb(109, 109, 109);
+    outline: none;
+    transform: translateY(6px);
+}
+
+.np-input-text--button {
+    color: rgb(163, 161, 161);
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+}
+
+/* Search */
+
+.np-chat-container {
+    width: 300px;
+    height: 500px;
+    position: relative;
+    border: 1px solid #000000;
+    padding: 12px;
+    background: #080b10;
+}
+
+.np-chat-container--holder {
+    height: 500px;
+    overflow-y: auto;
+}
+
+.np-chat--text {
+    width: 200px;
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    background: #eee;
+    word-break: keep-all;
+    margin: 15px 6px;
+    padding: 15px 10px;
+    border-radius: 6px;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.np-chat--time {
+    opacity: 0.7;
+}
+
+.np-chat--text_received {
+    background: #005d4b;
+    float: right;
+}
+
+.np-chat--text_sent {
+    background: #1f2c34;
+    float: left;
+}
+
+.np-input-text--value_holder {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    bottom: 0px;
+}
+
+.np-input-text--value {
+    padding: 6px 15px;
+    width: 100%;
+    font-size: 14px;
+    background: #ffffff;
+    border: 1px solid #d1d1d1;
+    border-radius: 30px;
+    color: rgb(109, 109, 109);
+    outline: none;
+    transform: translateY(6px);
+}
+
+.np-input-text--button {
+    color: rgb(163, 161, 161);
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.scrul {
+    overflow-y: auto;
+    height: 82vh;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #c5c5c5;
 }
